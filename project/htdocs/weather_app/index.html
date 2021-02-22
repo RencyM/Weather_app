@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Weather App</title>
+	<script src="jquery-3.5.1.min.js"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+	<script src="index.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<style>
+		* {
+  			box-sizing: border-box;
+		}
+		body{
+			background-image: url(sky_bg.jpg);
+			background-position: center;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: 100% 100%; 
+			font-family: Courier New;
+			text-align:center;
+			/*font-weight: bold;*/
+		}
+
+		#loc{
+			  
+			padding: 10px 20px; 
+			box-sizing: border-box;
+			border-radius: 4px;
+			border: none;
+			outline: none;
+			font-size: 18px;
+			/*color: lightblue;*/
+			font-weight: bold;
+		}
+
+		input[type=button]{
+  			background-color: #ACFF33;
+  			padding: 10px 20px; 
+  			color:white;
+  			border: none; 
+  			font-weight: bold;
+  			font-size: 18px;
+  			outline: none;
+		}
+
+		input:focus {
+  			border: 3px solid lightblue;
+		}
+		input::-webkit-calendar-picker-indicator {
+  			display: none;
+		}
+
+		td{
+			border: 2px solid white;
+			border-radius: 25px;
+			background-color:#F46B5E ;
+			color: white;
+
+		}
+
+		
+	</style>
+</head>
+<body>
+	<div style="text-align: center; padding: 25px;">
+	<input list="locations" name="location" id="loc" placeholder="Enter Location" align="center">
+    <!-- <datalist id="locations">
+    <option value="A">
+    <option value="B">
+    
+  	</datalist> -->
+	<input type="button" name="search" id="srch" value="Submit" onclick="get_data()"> 
+	</div>
+	<div id="block2" style="display: none;"></div>
+	<div id="block1" style="width: 100%; display: none; ">
+	<div style="width: 25%; float: left; padding: 20px;  font-size: 3vw; color: white;">
+	<img src="calendar-image-png-3.png" width="35px" style="vertical-align:top"><span id="dat" style="background-color: #1361D5  ; border: 2px solid lightgrey;padding: 10px; border-radius: 25px;"></span>	
+	</div>
+	<div  style="width: 50%; float: left; padding: 30px; margin-bottom: 100px; font-size: 5vw; color: white ">
+	<img src="tempr.png" width="35px" style="vertical-align:top"><span id="tmp" style="background-color: #004CBD ; border: 2px solid lightblue; padding: 10px; border-radius: 25px;"></span><img id="weather_icon" width="75px" style="padding: 10px;vertical-align:bottom">
+	</div>
+	<div  style="width: 25%; float: left; padding: 20px; font-size: 3vw; color:white;">
+	<img src="location_icon.png" width="35px" style="vertical-align:top"><span id="loc2" style="background-color: #1361D5   ; border: 2px solid lightgrey; padding: 10px; border-radius: 25px;"></span>
+		
+	</div>
+	
+	<table width="100%" >
+		<caption style="font-size:30px; font-weight: bold; color: #AB0F00">Daily Forecast</caption>
+		<tr >
+			<td id="col1">
+				
+			</td>
+			<td id="col2">
+				
+			</td>
+			<td id="col3">
+				
+			</td >
+			<td id="col4">
+				
+			</td>
+			<td id="col5">
+				
+			</td>
+			<td id="col6">
+				
+			</td>
+			
+		</tr>
+	</table>
+
+	</div>
+	
+</body>
+</html>
